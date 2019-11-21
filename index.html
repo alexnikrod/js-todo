@@ -11,27 +11,34 @@
     <title>To-Do</title>
 </head>
 <body>
-    <form class="form-todo">
-        <div class="form-header">
-            <img class="logo" src="./assets/clipboard.svg" alt="www.flaticon.com" title="Yet Another To Do App">
-            <h1 class="header-title">To-Do List</h1>
+    <div class="container">
+        <header class="header">
+            <img class="header__logo" src="./assets/clipboard.svg" alt="www.flaticon.com" title="Yet Another To Do App">
+            <h1 class="header__title">To-Do List</h1>
             <p>This app is written with Vanilla JS and object-oriented approach. Source is <a href="#" title="GitHub Repo">here</a>.</p>
-        </div>
-        <div class="form-input">
-            <input type="text" class="input-todo" placeholder="Your task" required="" autofocus="">
-        </div>
-        <button class="btn-add" type="submit">New Task</button>
-        <div class="list-item">
-            <ul class="todo-list">
-                <label class="container">Make an App with API
-                    <span class="checkmark undone"></span>
-                </label>
-                
-                <img class="edit" src="./assets/edit.svg" alt="www.flaticon.com" title="Edit">
-                <img class="delete" src="./assets/delete.svg" alt="www.flaticon.com" title="Delete">
-            </ul>
-        </div>
-    </form>  
+        </header>
+        <form class="form">
+            <input class="form__input" type="text" placeholder="Your task" required="" autofocus="">
+            <button class="form--btn" type="submit">New Task</button>
+        </form>  
+        <div class="todo__list">
+                <div class="todo">
+                    <div class="todo__item"> 
+                        Make an App with</div>
+                    <span class="icon item--edit" title="Edit"></span>
+                    <span class="icon item--delete" title="Delete"></span>
+                </div>
+                <div class="todo completed">
+                    <div class="todo__item"> 
+                        Learn React and Redux</div>
+                    <span class="icon item--edit" title="Edit"></span>
+                    <span class="icon item--delete" title="Delete"></span>
+                </div>
+        </div>   
+        
+    </div>
+    
+     
     <script src="./js/index.js"></script>  
 </body>
 </html>

@@ -7,6 +7,7 @@
 body {
     display: flex;
     align-items: center;
+    flex-direction: column;
     height: 100%;
     padding-top: 30px;
     font-family: 'Montserrat', sans-serif;;
@@ -34,39 +35,41 @@ a:hover {
 a:active {
     color: #009e93;
 }
+
+.container {
+    width: 100%;
+    max-width: 420px; 
+    padding: 15px;
+    padding-top: 0; 
+
+}
 /* Header */
-.form-todo {
+/* .header {
     width: 100%;
     max-width: 420px;
-    padding: 15px;
-    margin: auto;
-}
+} */
 
-.form-header {
-    margin-bottom: 1rem; 
-}
-
-.logo {
+.header__logo {
     width: 82px;
     height: 82px;
     vertical-align: middle;
     margin-bottom: 1.5rem;
 }
 
-/* .header-title {
-    margin-bottom: 1rem;
-} */
-
-/* Input */
-.form-input {
-    margin-bottom: 1rem;
+/* Form */
+.form {
+    width: 100%;
+    max-width: 420px;
+    padding: 15px 0 0 0;
     
+    margin: auto;
 }
 
-.input-todo {
+.form__input {
     width: 100%;
     height: 3.125rem;
     padding: .75rem;
+    margin-bottom: 1rem;
     border: 1px solid #ced4da;
     border-radius: .25rem;
     transition: border-color .15s ease-in-out,
@@ -74,15 +77,13 @@ a:active {
     outline: none;
 }
 
-.input-todo:focus {
-    
+.form__input:focus {
     border: 2px solid rgb(8,56,99, .8);
     border-style: inset;
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14)
-
 }
 
-.btn-add {
+.form--btn {
     cursor: pointer;
     width: 100%;
     height: 3.125rem;
@@ -99,103 +100,91 @@ a:active {
     transition: all .15s ease-in-out;
 }
 
-.btn-add:hover {
+.form--btn:hover {
     background-color:#009e93;
 }
 
-.btn-add:active {
+.form--btn:active {
     background-color: #2a6f66;
 }
 
-.list-item {
-    /* border: 1px solid #083863; */
-    border-radius: 10px;
-    /* border-bottom-left-radius: 0; 
-    border-bottom-right-radius: 0; */ 
-    background-color: #d4e1f4;  
+/* Todo List */
+.todo__list {
+    /* display: flex; */
+    width: 100%;
+    background-color: #d4e1f4;
+    border-radius: 10px; 
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
 }
 
-.todo-list {
-    position: relative;
-    text-align: left;
-    list-style: none;
-    color: #083863;
-    
-}
-
-li {
-    padding: .75rem;
-    border-bottom: 1px dashed #6c757d;
-}
-
-.container {
-    display: block;
-    position: relative;
+.todo {
+    display: flex;
+    align-items: center;
     padding: .5rem;
-    padding-left: 40px;
-    padding-right: 55px;
+    padding-right: 4px;
+    padding-left: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.todo:hover {
+    font-weight: 700;   
+  }
+
+.todo__item {
+    padding-left: 4px; 
+    width: 90%;
+    text-align: left;
+    padding: 0;
     cursor: pointer;
     user-select: none;
-    
-  }
-  
-  
-  .checkmark {
-    position: absolute;
-    top: 30%;
-    left: 12px;
-    height: 15px;
-    width: 15px;
-    border: 1px solid #6c757d; 
-    border-radius: 50%;
-  }
+    color: #083863;
+}
 
-  .container:hover > .undone {
-    border: 1px solid #d4e1f4;
-    background-color: #00ceb4;   
-  }
-  
-  /* When the checkbox is checked, add a blue background */
-  .completed {
+.completed {
       text-decoration: line-through;
-      
   }
 
-  .done {
-    border: 0;
-    width: 15px;
-    height: 15px;
-    background-image: url('../assets/tick.svg');    
+/* Icons */
+.icon {
+    width: 20px;
+    height: 20px;
+    background-color: #083863;
+    margin-right: 3px;
+    opacity: .3;
+    cursor: pointer;
+}
+
+  /*.item--check {
+    width: 8px;
+    height: 8px; 
+    border-radius: 50%;
+    -webkit-mask: url('../assets/done.svg') no-repeat center;
+            mask: url('../assets/done.svg') no-repeat center;
+  }*/
+
+  .item--edit {
+    -webkit-mask: url('../assets/edit.svg') no-repeat center;
+            mask: url('../assets/edit.svg') no-repeat center;   
   }
-  
-  .edit,
-  .delete {
-      position: absolute;
-      width: 20px;
-      height: 20px;
-      top: 10px;
+
+  .item--delete {
+    -webkit-mask: url('../assets/delete.svg') no-repeat center;
+            mask: url('../assets/delete.svg') no-repeat center;
+  }
+
+  .item--edit,
+  .item--delete {
       transition: all .15s ease-in-out;
-      opacity: .4;
-      cursor: pointer;
   }
 
-  .edit {
-    right: 30px;
-  }
-
-  .delete {
-    right: 5px;    
-  }
-
-  .edit:hover,
-  .delete:hover {
+  .item--edit:hover,
+  .item--delete:hover {
       transform: scale(1.2);
       opacity: 1;
   }
 
-  .edit:active,
-  .delete:active {
+  .item--edit:active,
+  .item--delete:active {
       transform: scale(.97);
       opacity: 1;
   }
