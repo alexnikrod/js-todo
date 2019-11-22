@@ -44,11 +44,6 @@ a:active {
 
 }
 /* Header */
-/* .header {
-    width: 100%;
-    max-width: 420px;
-} */
-
 .header__logo {
     width: 82px;
     height: 82px;
@@ -61,7 +56,6 @@ a:active {
     width: 100%;
     max-width: 420px;
     padding: 15px 0 0 0;
-    
     margin: auto;
 }
 
@@ -110,9 +104,8 @@ a:active {
 
 /* Todo List */
 .todo__list {
-    /* display: flex; */
     width: 100%;
-    background-color: #d4e1f4;
+    /* background-color: #d4e1f4; */
     border-radius: 10px; 
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
 }
@@ -140,8 +133,10 @@ a:active {
     color: #083863;
 }
 
-.completed {
+.done {
       text-decoration: line-through;
+      font-style: italic;
+      color: #00ceb4;
   }
 
 /* Icons */
@@ -153,14 +148,6 @@ a:active {
     opacity: .3;
     cursor: pointer;
 }
-
-  /*.item--check {
-    width: 8px;
-    height: 8px; 
-    border-radius: 50%;
-    -webkit-mask: url('../assets/done.svg') no-repeat center;
-            mask: url('../assets/done.svg') no-repeat center;
-  }*/
 
   .item--edit {
     -webkit-mask: url('../assets/edit.svg') no-repeat center;
