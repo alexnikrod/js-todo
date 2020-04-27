@@ -10,7 +10,7 @@ body {
     flex-direction: column;
     height: 100%;
     padding-top: 30px;
-    font-family: 'Montserrat', sans-serif;;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     font-weight: 400;
     line-height: 1.5;
@@ -103,41 +103,81 @@ a:active {
 }
 
 /* Todo List */
-.todo__list {
+.todo-list {
     width: 100%;
-    /* background-color: #d4e1f4; */
+    background-color: rgb(212,225,244, .2);
     border-radius: 10px; 
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14);
 }
 
-.todo {
+.todo-list__item {
+    position: relative;
     display: flex;
     align-items: center;
-    padding: .5rem;
-    padding-right: 4px;
-    padding-left: 10px;
-    transition: all .3s ease-in-out;
+    /* padding: .5rem; */
+    padding-right: 0;
+    z-index: 1;
 }
 
-.todo:hover {
-    font-weight: 700;   
-  }
+/* .todo-list__item:hover {
+    font-weight: 700;
+  } */
 
-.todo__item {
+.item__task {
     padding-left: 4px; 
+    min-width: 0;
     width: 90%;
+    margin: 5px;
+    margin-right: 5px;
     text-align: left;
     padding: 0;
     cursor: pointer;
     user-select: none;
     color: #083863;
+    word-wrap: break-word;
 }
 
-.done {
+.item__task:hover {
+    font-weight: 700;  
+    /* text-decoration: underline dashed; */  
+}
+
+.is-hidden {
+    display: none;
+    
+}
+
+.is-done {
       text-decoration: line-through;
       font-style: italic;
       color: #00ceb4;
   }
+
+/* Edit field */
+.input--edit {
+    /* position: relative; */
+    display: flex;
+    width: 100%;
+    height: 34px;
+    
+    padding-left: 4px;
+    padding-right: 29px;
+    /* padding: .75rem; */
+    margin: 0;
+    margin-left: 0;
+    margin-right: 4px;
+    border: 1px solid #ced4da;
+    border-radius: .25rem;
+    font-family: 'Montserrat', sans-serif;
+    transition: border-color .15s ease-in-out,
+    box-shadow .15s ease-in-out;
+    outline: none;    
+}
+
+.input--edit:focus {
+    border: 2px solid rgb(0,206,180, .7);
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14)
+}
 
 /* Icons */
 .icon {
@@ -149,29 +189,43 @@ a:active {
     cursor: pointer;
 }
 
-  .item--edit {
+.task--check {
+    /* z-index: 10;
+    position: absolute;
+    top: 13px;
+    right: 10px; */
+    background-color: #00ceb4;
+    opacity: .5;
+    -webkit-mask: url('../assets/tick.svg') no-repeat center;
+            mask: url('../assets/save.svg') no-repeat center;    
+}
+
+  .task--edit {
     -webkit-mask: url('../assets/edit.svg') no-repeat center;
             mask: url('../assets/edit.svg') no-repeat center;   
   }
 
-  .item--delete {
+  .task--delete {
     -webkit-mask: url('../assets/delete.svg') no-repeat center;
             mask: url('../assets/delete.svg') no-repeat center;
   }
 
-  .item--edit,
-  .item--delete {
+  .task--edit,
+  .task--delete,
+  .task--check {
       transition: all .15s ease-in-out;
   }
 
-  .item--edit:hover,
-  .item--delete:hover {
+  .task--edit:hover,
+  .task--delete:hover,
+  .task--check:hover {
       transform: scale(1.2);
       opacity: 1;
   }
 
-  .item--edit:active,
-  .item--delete:active {
+  .task--edit:active,
+  .task--delete:active,
+  .task--check:active {
       transform: scale(.97);
       opacity: 1;
   }

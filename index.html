@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./css/index.css">
 
-    <title>To-Do</title>
+    <title>To-Do App</title>
 </head>
 <body>
     <div class="container">
@@ -18,22 +18,25 @@
             <p>This app is written with Vanilla JS and object-oriented approach. Source is <a href="#" title="GitHub Repo">here</a>.</p>
         </header>
         <form class="form">
-            <input class="form__input" type="text" placeholder="Your task" required="" autofocus="">
+            <input class="form__input" type="text" placeholder="Your task" required autofocus maxlength="200">
             <button class="form--btn" type="submit">New Task</button>
         </form>  
-        <div class="todo__list">
-                <div class="todo">
-                    <div class="todo__item"> 
-                        Make an App with</div>
-                    <span class="icon item--edit" title="Edit"></span>
-                    <span class="icon item--delete" title="Delete"></span>
-                </div>
-                <div class="todo done">
-                    <div class="todo__item"> 
-                        Learn React and Redux</div>
-                    <span class="icon item--edit" title="Edit"></span>
-                    <span class="icon item--delete" title="Delete"></span>
-                </div>
+        <div class="todo-list">
+            <div class="todo-list__item">
+                <div class="item__task">Make an App with API</div>
+                <span class="icon task--edit" title="Edit"></span>
+                <span class="icon task--delete" title="Delete"></span>
+            </div>
+            <div class="todo-list__item">
+                <div class="item__task ">Learn React and Redux</div>
+                <span class="icon task--edit" title="Edit"></span>
+                <span class="icon task--delete" title="Delete"></span>
+            </div>
+            <div class="todo-list__item">
+                <div class="item__task ">Lorem ipsum dolor sit amet.</div>
+                <span class="icon task--edit" title="Edit"></span>
+                <span class="icon task--delete" title="Delete"></span>
+            </div>
         </div>   
     </div>
     <script src="./js/index.js"></script>  
